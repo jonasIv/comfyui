@@ -2,6 +2,12 @@ version: "3.8"
 # Compose file build variables set in .env
 
 services:
+  nginx:
+    build: 
+      context: ./nginx
+      dockerfile: Dockerfile
+    ports:
+      - ${NGINX_PORT_HOST:-443}:443
   supervisor:
     restart: always
     build:
