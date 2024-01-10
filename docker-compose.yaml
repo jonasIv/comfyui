@@ -3,6 +3,9 @@ version: "3.8"
 
 services:
   nginx:
+    restart: always
+    depends_on:
+      - supervisor
     build: 
       context: ./nginx
       dockerfile: Dockerfile
